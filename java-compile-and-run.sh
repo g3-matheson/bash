@@ -2,7 +2,7 @@
 
 # check if the class name is provided for running the compiled program
 if [ -z "$1" ]; then
-    echo "Usage: $0 <name-of-class-that-contains-main()>"
+    echo "Usage: $0 <name-of-class-that-contains-main()> <args>"
     exit 1
 fi
 
@@ -20,6 +20,10 @@ if [ $? -ne 0 ]; then
 fi
 
 # run program
-java -cp "$OUT_DIR" "$MAIN_CLASS"
+if [ -z "2" ]; then
+    java -cp "$OUT_DIR" "$MAIN_CLASS"
+else
+    java -cp "$OUT_DIR" "$MAIN_CLASS" "${@:2}"
+fi
 
 exit 0
