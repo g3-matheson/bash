@@ -1,0 +1,2 @@
+- add darken-pdf-all-cleanup.sh
+  - deletes all the old .pdfs and removes -dark from the new ones
